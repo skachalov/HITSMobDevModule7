@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     @IBAction func chooseRotation(_ sender: UISegmentedControl) {
         
-        let image:UIImage = originalImage
+        let image: UIImage = originalImage
         
         let height = Int((image.size.height))
         let width = Int((image.size.width))
@@ -240,6 +240,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             img.image = pickedImage
             originalImage = pickedImage
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tabview1") as! tabView1ViewController
+            viewController.image = originalImage
+            let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "test")
+            
+            self.navigationController?.pushViewController(next, animated: true)
+            
         }
         dismiss(animated: true, completion: nil)
     }
