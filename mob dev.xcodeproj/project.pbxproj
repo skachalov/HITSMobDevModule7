@@ -16,6 +16,7 @@
 		5939EBF5263BD67500802BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF3263BD67500802BE3 /* Main.storyboard */; };
 		5939EBF7263BD67800802BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF6263BD67800802BE3 /* Assets.xcassets */; };
 		5939EBFA263BD67800802BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */; };
+		A18F3724264EC27C00BB062E /* blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F3723264EC27C00BB062E /* blur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		3C2326DD2642925200EC37BB /* structForPixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structForPixels.swift; sourceTree = "<group>"; };
-		3CD89B00264A8B780040ED9A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3CF61E3A264EAFE800E97504 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView1ViewController.swift; sourceTree = "<group>"; };
 		5939EBEC263BD67500802BE3 /* mob dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +43,7 @@
 		5939EBF6263BD67800802BE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5939EBF9263BD67800802BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5939EBFB263BD67800802BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A18F3723264EC27C00BB062E /* blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,6 @@
 		5939EBE3263BD67500802BE3 = {
 			isa = PBXGroup;
 			children = (
-				3CD89B00264A8B780040ED9A /* MyPlayground.playground */,
 				5939EBEE263BD67500802BE3 /* mob dev */,
 				5939EBED263BD67500802BE3 /* Products */,
 			);
@@ -86,6 +86,7 @@
 				5939EBF6263BD67800802BE3 /* Assets.xcassets */,
 				5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */,
 				5939EBFB263BD67800802BE3 /* Info.plist */,
+				A18F3723264EC27C00BB062E /* blur.swift */,
 			);
 			path = "mob dev";
 			sourceTree = "<group>";
@@ -170,6 +171,7 @@
 			files = (
 				5939EBF2263BD67500802BE3 /* ViewController.swift in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
+				A18F3724264EC27C00BB062E /* blur.swift in Sources */,
 				3C2326DE2642925200EC37BB /* structForPixels.swift in Sources */,
 				3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */,
 				5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */,
