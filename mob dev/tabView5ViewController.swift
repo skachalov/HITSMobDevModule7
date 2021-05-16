@@ -1,22 +1,21 @@
 //
-//  tabView1ViewController.swift
+//  tabView5ViewController.swift
 //  mob dev
 //
-//  Created by spoonty on 5/14/21.
+//  Created by spoonty on 5/16/21.
 //  Copyright © 2021 Пользователь. All rights reserved.
 //
 
 import UIKit
 
-class tabView1ViewController: UIViewController {
-    
-    @IBOutlet weak var pictureImageView: UIImageView!
+class tabView5ViewController: UIViewController {
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+        // Do any additional setup after loading the view.
     }
     
 

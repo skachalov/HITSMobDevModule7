@@ -11,6 +11,9 @@
 import UIKit
 import SwiftImage
 
+
+
+
 var originalImage = UIImage()
 
 class ViewController: UIViewController {
@@ -18,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var textToLoad: UILabel!
     @IBOutlet weak var scaling: UITextField!
+    @IBOutlet weak var angle: UITextField!
     
     let imagePicker = UIImagePickerController()
     
@@ -49,75 +53,149 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func chooseRotation(_ sender: UISegmentedControl) {
+    @IBAction func rotation(_ sender: Any) {
+        let image = Image<RGBA<UInt8>>(uiImage: originalImage)
+        let height = image.height
+        let width = image.width
         
-        let image: UIImage = originalImage
+        var newImage = Image<RGBA<UInt8>>(width: width, height: height, pixel: .black)
+//
+//        var x = 0
+//        var y = 0
+//
+//        for i in 0..<width {
+//            for j in (0..<height).reversed() {
+//                newImage[x, y] = image[i,j]
+//                x += 1
+//            }
+//            x = 0
+//            y += 1
+//        }
         
-        let height = Int((image.size.height))
-        let width = Int((image.size.width))
-
-        let bitsPerComponent = Int(8)
-        let bytesPerRowHorizontally = 4 * width
-        let bytesPerRowVertically = 4 * height
-
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-
-        let rawDataHorizontally = UnsafeMutablePointer<UInt32>.allocate(capacity: (width * height))
-        let rawDataVertically = UnsafeMutablePointer<UInt32>.allocate(capacity: (height * height))
-
-        let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
-        let CGPointZero = CGPoint(x: 0, y: 0)
-        let rect = CGRect(origin: CGPointZero, size: (image.size))
-
-        let imageContext = CGContext(data: rawDataHorizontally, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRowHorizontally, space: colorSpace, bitmapInfo: bitmapInfo)
-
-        imageContext?.draw(image.cgImage!, in: rect)
+        var angleVal = Double(angle.text!)!
         
-        let pixelsOriginal = UnsafeMutableBufferPointer<UInt32>(start: rawDataHorizontally, count: width * height)
-        if sender.selectedSegmentIndex == 0 {
-            img.image = originalImage
-        }
-        if sender.selectedSegmentIndex == 1 {
-
-            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: width * height)
-            var counter = 0
-            for  x in 0..<width {
-                for  y in 0..<height{
-                    newPixels[counter] = pixelsOriginal[(height-1-y)*width + x]
-                    counter += 1
-                }
-            }
-            let outContext = CGContext(data: newPixels.baseAddress, width: height, height: width, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowVertically,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
-            let outImage = UIImage(cgImage: outContext!.makeImage()!)
-            img.image = outImage
-        }
-        if sender.selectedSegmentIndex == 2 {
-            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: height * width)
-            var counter = 0
+        let centerX = Int(width/2)
+        let centerY = Int(height/2)
+        var c = cos(angleVal*Double.pi/180)
+        var s = sin(angleVal*Double.pi/180)
+        var t = tan(angleVal/2*Double.pi/180)
+        
+        for x in 0..<width {
             for y in 0..<height {
-                for x in 0..<width {
-                    newPixels[counter] = pixelsOriginal[(height-1-y)*width + (width-1-x)]
-                    counter += 1
+                let xp1 = Int(Double(x-centerX)*1 - Double(y-centerY)*t + Double(centerX))
+                let yp1 = Int(Double(y-centerY)*1 + Double(centerY))
+                
+                let xp2 = Int(Double(xp1-centerX)*1 - Double(yp1-centerY)*0 + Double(centerX))
+                let yp2 = Int(Double(xp1-centerX)*c + Double(yp1-centerY)*1 + Double(centerY))
+                
+                let xp3 = Int(Double(xp2-centerX)*1 - Double(yp2-centerY)*t + Double(centerX))
+                let yp3 = Int(Double(xp2-centerX)*0 + Double(yp2-centerY)*1 + Double(centerY))
+                
+//                newImage[xp, yp] = image[x,y]
+                if (0 <= xp3 && xp3 < width && 0 <= yp3 && yp3 < height) {
+                    newImage[xp3, yp3] = image[x, y]
                 }
+//                //print(xp, yp)
             }
-            let outContext = CGContext(data: newPixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowHorizontally,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
-            let outImage = UIImage(cgImage: outContext!.makeImage()!)
-            img.image = outImage
         }
-        if sender.selectedSegmentIndex == 3 {
-            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: width * height)
-            var counter = 0
-            for  x in 0..<width {
-                for  y in 0..<height{
-                    newPixels[counter] = pixelsOriginal[(width-1-x) + width*y]
-                    counter += 1
-                }
-            }
-            let outContext = CGContext(data: newPixels.baseAddress, width: height, height: width, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowVertically,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
-            let outImage = UIImage(cgImage: outContext!.makeImage()!)
-            img.image = outImage
-        }
+        
+        
+        img.image = newImage.uiImage
+        
+        //img.image = newImage.uiImage
     }
+    
+    
+//    @IBAction func chooseRotation(_ sender: UISegmentedControl) {
+//
+//        let image = Image<RGBA<UInt8>>(uiImage: originalImage)
+//        let height = image.height
+//        let width = image.width
+//
+//        var newImage = Image<RGBA<UInt8>>(width: height, height: width, pixel: .black)
+//
+//        var x = 0
+//        var y = 0
+//
+//        for i in 0..<width {
+//            for j in (0..<height).reversed() {
+//                newImage[x, y] = image[i,j]
+//                x += 1
+//            }
+//            x = 0
+//            y += 1
+//        }
+//
+//        img.image = newImage.uiImage
+        
+        
+//        let image: UIImage = originalImage
+//
+//        let height = Int((image.size.height))
+//        let width = Int((image.size.width))
+//
+//        let bitsPerComponent = Int(8)
+//        let bytesPerRowHorizontally = 4 * width
+//        let bytesPerRowVertically = 4 * height
+//
+//        let colorSpace = CGColorSpaceCreateDeviceRGB()
+//
+//        let rawDataHorizontally = UnsafeMutablePointer<UInt32>.allocate(capacity: (width * height))
+//        let rawDataVertically = UnsafeMutablePointer<UInt32>.allocate(capacity: (height * height))
+//
+//        let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
+//        let CGPointZero = CGPoint(x: 0, y: 0)
+//        let rect = CGRect(origin: CGPointZero, size: (image.size))
+//
+//        let imageContext = CGContext(data: rawDataHorizontally, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRowHorizontally, space: colorSpace, bitmapInfo: bitmapInfo)
+//
+//        imageContext?.draw(image.cgImage!, in: rect)
+//
+//        let pixelsOriginal = UnsafeMutableBufferPointer<UInt32>(start: rawDataHorizontally, count: width * height)
+//        if sender.selectedSegmentIndex == 0 {
+//            img.image = originalImage
+//        }
+//        if sender.selectedSegmentIndex == 1 {
+//
+//            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: width * height)
+//            var counter = 0
+//            for  x in 0..<width {
+//                for  y in 0..<height{
+//                    newPixels[counter] = pixelsOriginal[(height-1-y)*width + x]
+//                    counter += 1
+//                }
+//            }
+//            let outContext = CGContext(data: newPixels.baseAddress, width: height, height: width, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowVertically,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
+//            let outImage = UIImage(cgImage: outContext!.makeImage()!)
+//            img.image = outImage
+//        }
+//        if sender.selectedSegmentIndex == 2 {
+//            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: height * width)
+//            var counter = 0
+//            for y in 0..<height {
+//                for x in 0..<width {
+//                    newPixels[counter] = pixelsOriginal[(height-1-y)*width + (width-1-x)]
+//                    counter += 1
+//                }
+//            }
+//            let outContext = CGContext(data: newPixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowHorizontally,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
+//            let outImage = UIImage(cgImage: outContext!.makeImage()!)
+//            img.image = outImage
+//        }
+//        if sender.selectedSegmentIndex == 3 {
+//            let newPixels = UnsafeMutableBufferPointer<UInt32>(start: rawDataVertically, count: width * height)
+//            var counter = 0
+//            for  x in 0..<width {
+//                for  y in 0..<height{
+//                    newPixels[counter] = pixelsOriginal[(width-1-x) + width*y]
+//                    counter += 1
+//                }
+//            }
+//            let outContext = CGContext(data: newPixels.baseAddress, width: height, height: width, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRowVertically,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
+//            let outImage = UIImage(cgImage: outContext!.makeImage()!)
+//            img.image = outImage
+//        }
+    //}
     
     
     func buildMipmap(height: Int, width: Int, k: Double) -> (width: Int, height: Int) {
@@ -240,12 +318,14 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             img.image = pickedImage
             originalImage = pickedImage
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tabview1") as! tabView1ViewController
-            viewController.image = originalImage
-            let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "test")
             
+//            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tabview1") as! tabView1ViewController
+//            viewController.image = originalImage
+
+            let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "test") as! testViewController
             self.navigationController?.pushViewController(next, animated: true)
-            
+
+ 
         }
         dismiss(animated: true, completion: nil)
     }
