@@ -16,6 +16,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6od-Id-YES">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1844055355" green="0.20014184709999999" blue="0.21988338230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uRP-iG-zKu"/>
@@ -34,60 +35,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap here to load image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I73-MY-bEE">
-                                <rect key="frame" x="138" y="237" width="138" height="16"/>
+                                <rect key="frame" x="138" y="360" width="138" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-bG-gZS">
-                                <rect key="frame" x="184" y="537" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="cgange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2y-vM-14R"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2x-Z7-KkD">
-                                <rect key="frame" x="99" y="568" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="0.10000000000000001" maximumValue="10" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cVm-FG-3nB">
-                                <rect key="frame" x="221" y="569" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="set:" destination="BYZ-38-t0r" eventType="valueChanged" id="nNE-jc-DVN"/>
-                                </connections>
-                            </stepper>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Uu-WvT">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="173" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sug-X8-Ps8">
-                                <rect key="frame" x="84" y="434" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="rotation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77s-DX-3xw"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgt-kL-nZP">
-                                <rect key="frame" x="159" y="432" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="8U0-zT-FmX"/>
+                        <color key="backgroundColor" red="0.18358924979999999" green="0.19739139080000001" blue="0.21996074909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <color key="backgroundColor" red="0.18358924979999999" green="0.19739139080000001" blue="0.21996074909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Rqd-9j-zfh"/>
                     <connections>
-                        <outlet property="angle" destination="Vgt-kL-nZP" id="e6c-Oc-ENg"/>
                         <outlet property="img" destination="UV6-Uu-WvT" id="mkh-fS-Dl5"/>
-                        <outlet property="scaling" destination="J2x-Z7-KkD" id="zq6-sH-R1d"/>
                         <outlet property="textToLoad" destination="I73-MY-bEE" id="LGv-pb-ace"/>
                         <segue destination="kar-HV-u5J" kind="push" id="Tgi-A1-kjj"/>
                     </connections>
@@ -96,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="2039" y="-139"/>
         </scene>
-        <!--Фильтры-->
+        <!--Filters-->
         <scene sceneID="cj7-9N-X4b">
             <objects>
                 <viewController storyboardIdentifier="tabview2" id="iAw-Ft-AEn" customClass="tabView2ViewController" customModule="mob_dev" sceneMemberID="viewController">
@@ -105,20 +72,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Whs-aN-U7W">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ijs-fr-LCr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yrb-V7-VWs"/>
+                        <color key="backgroundColor" red="0.18523582820000001" green="0.20291090010000001" blue="0.2198042274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Фильтры" id="len-iu-Of3"/>
+                    <tabBarItem key="tabBarItem" title="Filters" image="camera.filters" catalog="system" id="len-iu-Of3"/>
+                    <connections>
+                        <outlet property="img" destination="Whs-aN-U7W" id="5lx-5g-rMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRD-Fx-cx4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2313" y="620"/>
         </scene>
-        <!--Масштабирование-->
+        <!--Scaling-->
         <scene sceneID="JGu-st-q0v">
             <objects>
                 <viewController storyboardIdentifier="tabview3" id="ipq-vX-GLq" customClass="tabView3ViewCOntroller" customModule="mob_dev" sceneMemberID="viewController">
@@ -127,35 +97,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d97-wY-9VV">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhu-yk-cTF">
-                                <rect key="frame" x="257" y="569" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="start:" destination="ipq-vX-GLq" eventType="touchUpInside" id="BLP-B7-JFL"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oP-Rm-gxb">
-                                <rect key="frame" x="83" y="521" width="97" height="34"/>
+                                <rect key="frame" x="104.43506690393224" y="502" width="94" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.15048551560000001" green="0.16595089439999999" blue="0.17654895779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="0.10000000000000001" maximumValue="5" stepValue="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-se-6T5">
-                                <rect key="frame" x="86" y="590" width="94" height="32"/>
+                                <rect key="frame" x="214.43506690393178" y="503" width="94.000000000000455" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="set:" destination="ipq-vX-GLq" eventType="valueChanged" id="a2w-Nr-fZh"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhu-yk-cTF">
+                                <rect key="frame" x="171" y="565" width="70.999999999999773" height="37.000000000000114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="start:" destination="ipq-vX-GLq" eventType="touchUpInside" id="BLP-B7-JFL"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="4a2-ez-W1C"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mmc-xo-npC"/>
+                        <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Масштабирование" id="UVe-We-OxS"/>
+                    <tabBarItem key="tabBarItem" title="Scaling" image="arrow.up.left.and.arrow.down.right.circle" catalog="system" id="UVe-We-OxS"/>
                     <connections>
                         <outlet property="coeff" destination="5oP-Rm-gxb" id="0ve-km-x2u"/>
                         <outlet property="img" destination="d97-wY-9VV" id="yA4-BI-umz"/>
@@ -163,9 +142,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXa-lc-ADy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="620"/>
+            <point key="canvasLocation" x="3015.9420289855075" y="619.56521739130437"/>
         </scene>
-        <!--Item-->
+        <!--Masking-->
         <scene sceneID="aqP-ne-You">
             <objects>
                 <viewController storyboardIdentifier="tabiew4" id="ErO-NL-fQH" customClass="tabView4ViewController" customModule="mob_dev" sceneMemberID="viewController">
@@ -174,14 +153,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-hG-u7Q">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="rUe-6N-6P1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="jeK-VQ-WPa"/>
+                        <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="DrJ-gK-Tr2"/>
+                    <tabBarItem key="tabBarItem" title="Masking" image="square.stack.3d.down.dottedline" catalog="system" id="DrJ-gK-Tr2"/>
+                    <connections>
+                        <outlet property="img" destination="gpa-hG-u7Q" id="sJK-jG-G4e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKa-In-JmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,20 +178,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="j7U-6h-dc8">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Tc5-hl-95E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="m37-Sj-5Mg"/>
+                        <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="U6P-Ov-cdg"/>
+                    <connections>
+                        <outlet property="img" destination="j7U-6h-dc8" id="mXm-r9-TcY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpy-Wn-rkd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4497" y="620"/>
         </scene>
-        <!--Повороты-->
+        <!--Rotation-->
         <scene sceneID="7Ri-ZC-4u2">
             <objects>
                 <viewController storyboardIdentifier="tabview1" id="70h-Po-G4z" customClass="tabView1ViewController" customModule="mob_dev" sceneMemberID="viewController">
@@ -218,14 +203,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fnR-dh-Wct">
-                                <rect key="frame" x="16" y="132" width="380" height="250"/>
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-zQ-OIl">
+                                <rect key="frame" x="27" y="565" width="359" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.24324983359999999" green="0.25891369580000001" blue="0.27870246770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbI-HV-3Q8">
+                                <rect key="frame" x="158" y="502" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1496478319" green="0.16316083070000001" blue="0.1766304672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-Ss-4Ws">
+                                <rect key="frame" x="39" y="501" width="42" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" image="rotate.right.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="rotate:" destination="70h-Po-G4z" eventType="touchUpInside" id="cUe-c5-b7c"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ai6-Ps-MEE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="KE0-LZ-Ai0"/>
+                        <color key="backgroundColor" red="0.1844055355" green="0.20014184709999999" blue="0.21988338230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Повороты" id="qCx-4a-44O"/>
+                    <tabBarItem key="tabBarItem" title="Rotation" image="rotate.right" catalog="system" id="qCx-4a-44O"/>
+                    <connections>
+                        <outlet property="img" destination="fnR-dh-Wct" id="JLU-Qc-FgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJZ-T0-bdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,10 +247,12 @@
             <objects>
                 <tabBarController storyboardIdentifier="test" id="kar-HV-u5J" customClass="testViewController" customModule="mob_dev" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7F9-X0-DiQ"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vhd-ne-aw9">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vhd-ne-aw9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                        <color key="barTintColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="70h-Po-G4z" kind="relationship" relationship="viewControllers" id="dNd-Gq-ag5"/>
@@ -255,9 +268,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.left.and.arrow.down.right.circle" catalog="system" width="128" height="121"/>
+        <image name="camera.filters" catalog="system" width="128" height="116"/>
         <image name="pictureForMob.jpg" width="284" height="177"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="rotate.right" catalog="system" width="128" height="124"/>
+        <image name="rotate.right.fill" catalog="system" width="128" height="124"/>
+        <image name="square.stack.3d.down.dottedline" catalog="system" width="128" height="113"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

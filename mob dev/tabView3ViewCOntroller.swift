@@ -17,7 +17,7 @@ class tabView3ViewCOntroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        img.image = picture
 
     }
     
@@ -123,6 +123,7 @@ class tabView3ViewCOntroller: UIViewController {
         if k > 1.0 {
             let img1: UIImage = bilinearInterpolation(image: image, height: height, width: width, heightR: heightR, widthR: widthR).uiImage
             img.image = img1
+            picture = img1
         } else if k < 1.0 {
             let size = buildMipmap(height: height, width: width, k: k)
             let heightS = size.height
@@ -130,10 +131,8 @@ class tabView3ViewCOntroller: UIViewController {
             let imageS = bilinearInterpolation(image: image, height: height, width: width, heightR: heightS, widthR: widthS)
             let img1: UIImage = trilinearInterpolation(image: image, imageS: imageS, height: height, width: width, heightS: heightS, widthS: widthS, heightR: heightR, widthR: widthR).uiImage
             img.image = img1
-        } else {
-            let img1: UIImage = image.uiImage
-            img.image = img1
-        }
+            picture = img1
+        } 
     }
     
 
