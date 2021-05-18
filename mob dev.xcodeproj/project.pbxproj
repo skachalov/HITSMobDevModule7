@@ -22,6 +22,7 @@
 		5939EBF5263BD67500802BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF3263BD67500802BE3 /* Main.storyboard */; };
 		5939EBF7263BD67800802BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF6263BD67800802BE3 /* Assets.xcassets */; };
 		5939EBFA263BD67800802BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */; };
+		A1079E3B265463ED0035139F /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079E3A265463ED0035139F /* Filters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		5939EBF6263BD67800802BE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5939EBF9263BD67800802BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5939EBFB263BD67800802BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1079E3A265463ED0035139F /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				5939EBEE263BD67500802BE3 /* mob dev */,
 				5939EBED263BD67500802BE3 /* Products */,
+				A1079E39265463610035139F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,8 +107,16 @@
 				5939EBFB263BD67800802BE3 /* Info.plist */,
 				3C2557B12650F737005DC919 /* blur.swift */,
 				3C255794264EF619005DC919 /* MyPlayground.playground */,
+				A1079E3A265463ED0035139F /* Filters.swift */,
 			);
 			path = "mob dev";
+			sourceTree = "<group>";
+		};
+		A1079E39265463610035139F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 				3C25579C2650D41A005DC919 /* tabView5ViewController.swift in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
 				3C2557962650D3A2005DC919 /* tabView2ViewController.swift in Sources */,
+				A1079E3B265463ED0035139F /* Filters.swift in Sources */,
 				3C25579A2650D3F9005DC919 /* tabView4ViewController.swift in Sources */,
 				3C2326DE2642925200EC37BB /* structForPixels.swift in Sources */,
 				3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */,
