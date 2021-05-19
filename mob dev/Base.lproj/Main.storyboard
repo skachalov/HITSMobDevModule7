@@ -71,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Whs-aN-U7W">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Whs-aN-U7W">
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -96,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d97-wY-9VV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d97-wY-9VV">
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -152,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-hG-u7Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-hG-u7Q">
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="j7U-6h-dc8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7U-6h-dc8">
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -202,7 +202,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureForMob.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fnR-dh-Wct">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnR-dh-Wct">
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -229,6 +229,11 @@
                                     <action selector="rotate:" destination="70h-Po-G4z" eventType="touchUpInside" id="cUe-c5-b7c"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-aZ-dj7">
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemOrangeColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KE0-LZ-Ai0"/>
                         <color key="backgroundColor" red="0.1844055355" green="0.20014184709999999" blue="0.21988338230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -236,6 +241,7 @@
                     <tabBarItem key="tabBarItem" title="Rotation" image="rotate.right" catalog="system" id="qCx-4a-44O"/>
                     <connections>
                         <outlet property="img" destination="fnR-dh-Wct" id="JLU-Qc-FgJ"/>
+                        <outlet property="waiting" destination="zEG-aZ-dj7" id="2Y2-x3-Rhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJZ-T0-bdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,7 +252,14 @@
         <scene sceneID="kY6-xd-JcW">
             <objects>
                 <tabBarController storyboardIdentifier="test" id="kar-HV-u5J" customClass="testViewController" customModule="mob_dev" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7F9-X0-DiQ"/>
+                    <navigationItem key="navigationItem" id="7F9-X0-DiQ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ITc-gA-ykq">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="saveImage:" destination="kar-HV-u5J" id="GVo-Xg-eDL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vhd-ne-aw9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -270,7 +283,6 @@
     <resources>
         <image name="arrow.up.left.and.arrow.down.right.circle" catalog="system" width="128" height="121"/>
         <image name="camera.filters" catalog="system" width="128" height="116"/>
-        <image name="pictureForMob.jpg" width="284" height="177"/>
         <image name="rotate.right" catalog="system" width="128" height="124"/>
         <image name="rotate.right.fill" catalog="system" width="128" height="124"/>
         <image name="square.stack.3d.down.dottedline" catalog="system" width="128" height="113"/>

@@ -18,4 +18,7 @@ class testViewController: UITabBarController {
         self.navigationItem.hidesBackButton = true
     }
 
+    @IBAction func saveImage(_ sender: Any) {
+        UIImageWriteToSavedPhotosAlbum(picture, self, nil, nil)
+    }
 }
