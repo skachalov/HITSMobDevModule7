@@ -14,23 +14,7 @@
 import Foundation
 import UIKit
 import SwiftImage
-//
-//let blurImage = GaussianBlur.createBlurredImage(radius: 5, image: UIImage(named: "ggwp.jpg")!)
-//let image = UIImage(named: "ggwp.jpg")
-//let originImage = Image<RGBA<UInt8>>(uiImage: image )
-//var unSharpImage : Image<RGBA<UInt8>>
-//let width = image.width
-//let height = image.height
-//for x in 0...height{
-//    for y in 0...width{
-//        unSharpImage[x,y].red = originImage[x,y].red - blurImage[x,y].red
-//        unSharpImage[x,y].green = originImage[x,y].green - blurImage[x,y].green
-//        unSharpImage[x,y].blue = originImage[x,y].blue - blurImage[x,y].blue
-////        if unSharpImage[x,y].red < 0 unSharpImage[x,y].red = 0
-////        if unSharpImage[x,y].green < 0 unSharpImage[x,y].green = 0
-////        if unSharpImage[x,y].blue < 0 unSharpImage[x,y].blue = 0
-//    }
-//}
+
 
 final class GaussianBlur {
     

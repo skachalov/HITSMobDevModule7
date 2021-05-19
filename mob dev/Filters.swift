@@ -26,20 +26,20 @@
 //
 //for  y in 0..<200 {
 //    for  x in 0..<200{
-////        var p = pixels[x+y*width]
-////        var tmp =  RGBAPixel(rawVal: p)
-////        tmp.red = 255
-////        p = RGBAPixel(rawVal: tmp.raw).raw
-////        pixels[x+y*width] = p
+//        var p = pixels[x+y*width]
+//        var tmp =  RGBAPixel(rawVal: p)
+//        tmp.red = 255
+//        p = RGBAPixel(rawVal: tmp.raw).raw
+//        pixels[x+y*width] = p
 //        
-////        var p = pixels[x+y*width]
-////        var tmp =  RGBAPixel(rawVal: p)
-////
-////        tmp.red = 255 - tmp.red
-////        tmp.green = 255 - tmp.red
-////        tmp.blue = 255 - tmp.blue
-////        p = RGBAPixel(rawVal: tmp.raw).raw
-////        pixels[x+y*width] = p
+//        var p = pixels[x+y*width]
+//        var tmp =  RGBAPixel(rawVal: p)
+//
+//        tmp.red = 255 - tmp.red
+//        tmp.green = 255 - tmp.red
+//        tmp.blue = 255 - tmp.blue
+//        p = RGBAPixel(rawVal: tmp.raw).raw
+//        pixels[x+y*width] = p
 //
 //        var p = pixels[x+y*width]
 //        var tmp =  RGBAPixel(rawVal: p)
@@ -53,20 +53,20 @@
 //            pixels[x+y*width] = p
 //        }
 //        
-////        var p = pixels[x+y*width]
-////        var tmp =  RGBAPixel(rawVal: p)
-////        var total = (tmp.blue + tmp.green + tmp.red)/3
-////        tmp.blue = total
-////        tmp.red = total + 40
-////        tmp.green = total + 20
-////        if (tmp.red > 255){
-////            tmp.red  = 255
-////        }
-////        if (tmp.green > 255){
-////            tmp.green = 255
-////        }
-////        p = RGBAPixel(rawVal: tmp.raw).raw
-////        pixels[x+y*width] = p
+//        var p = pixels[x+y*width]
+//        var tmp =  RGBAPixel(rawVal: p)
+//        var total = (tmp.blue + tmp.green + tmp.red)/3
+//        tmp.blue = total
+//        tmp.red = total + 40
+//        tmp.green = total + 20
+//        if (tmp.red > 255){
+//            tmp.red  = 255
+//        }
+//        if (tmp.green > 255){
+//            tmp.green = 255
+//        }
+//        p = RGBAPixel(rawVal: tmp.raw).raw
+//        pixels[x+y*width] = p
 //    }
 //}
 //let outContext = CGContext(data: pixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRow,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
@@ -74,4 +74,4 @@
 //let outImage = UIImage(cgImage: outContext!.makeImage()!)
 //
 //
-
+//
