@@ -157,7 +157,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="set:" destination="ipq-vX-GLq" eventType="valueChanged" id="a2w-Nr-fZh"/>
+                                    <action selector="set:" destination="ipq-vX-GLq" eventType="valueChanged" id="0Te-I4-P6k"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhu-yk-cTF">
@@ -170,7 +170,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="start:" destination="ipq-vX-GLq" eventType="touchUpInside" id="BLP-B7-JFL"/>
+                                    <action selector="start:" destination="ipq-vX-GLq" eventType="touchUpInside" id="aQC-ol-a9t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -179,8 +179,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Scaling" image="arrow.up.left.and.arrow.down.right.circle" catalog="system" id="UVe-We-OxS"/>
                     <connections>
+                        <outlet property="button" destination="Yhu-yk-cTF" id="LE2-8u-ZuD"/>
                         <outlet property="coeff" destination="5oP-Rm-gxb" id="0ve-km-x2u"/>
                         <outlet property="img" destination="d97-wY-9VV" id="yA4-BI-umz"/>
+                        <outlet property="setVar" destination="bdM-se-6T5" id="NU5-ay-Mv8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXa-lc-ADy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -284,6 +286,7 @@
                     <tabBarItem key="tabBarItem" title="Rotation" image="rotate.right" catalog="system" id="qCx-4a-44O"/>
                     <connections>
                         <outlet property="img" destination="fnR-dh-Wct" id="JLU-Qc-FgJ"/>
+                        <outlet property="setAngle" destination="fq0-zQ-OIl" id="vno-o6-qNc"/>
                         <outlet property="waiting" destination="zEG-aZ-dj7" id="2Y2-x3-Rhf"/>
                     </connections>
                 </viewController>

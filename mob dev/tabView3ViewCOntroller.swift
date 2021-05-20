@@ -9,19 +9,18 @@
 import UIKit
 import SwiftImage
 
-var isThird = false
-var arrayOfSize = [Double]()
-
 class tabView3ViewCOntroller: UIViewController {
     
     
     @IBOutlet weak var coeff: UITextField!
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var setVar: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        setVar.value = 1.0
+        button.layer.cornerRadius = 10
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,7 +28,7 @@ class tabView3ViewCOntroller: UIViewController {
     }
 
     @IBAction func set(_ sender: UIStepper) {
-        coeff.text = String(sender.value)
+        coeff.text = String(NSString(format: "%.2f", setVar.value))
     }
     
     @IBAction func start(_ sender: Any) {

@@ -11,9 +11,6 @@
 import UIKit
 import SwiftImage
 
-var picture = UIImage()
-var mainPicture = UIImage()
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
@@ -29,6 +26,11 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(load(_ :)))
         img.addGestureRecognizer(tap)
         img.isUserInteractionEnabled = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        picture = UIImage()
+        mainPicture = UIImage()
+        firstAppear = true
     }
 
     @objc func load(_ sender: UITapGestureRecognizer) {
@@ -56,26 +58,10 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
             mainPicture = pickedImage
-//            let tmp = Image<RGBA<UInt8>>(uiImage: pickedImage)
-//            let height = tmp.height
-//            let width = tmp.width
-//            if (height >= 512 || width >= 512) {
-//                let size = 512
-//                var newHeight: Int = size, newWidth: Int = size
-//                if height >= width {
-//                        newWidth = Int((width*size)/height)
-//                } else {
-//                    newHeight = Int((height*size)/width)
-//                }
-//                picture = tmp.resizedTo(width: newWidth, height: newHeight, interpolatedBy: .nearestNeighbor).uiImage
-//            } else {
-//                picture = pickedImage
-//            }
             
             let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "test") as! testViewController
             self.navigationController?.pushViewController(next, animated: true)
         }
-        //dismiss(animated: false, completion: nil)
     }
 }
 

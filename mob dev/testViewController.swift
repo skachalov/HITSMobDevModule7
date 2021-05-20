@@ -15,7 +15,8 @@ class testViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.tintColor = UIColor.systemOrange
+        self.navigationController?.navigationBar.topItem?.title = "Return"
     }
 
     @IBAction func saveImage(_ sender: Any) {

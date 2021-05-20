@@ -9,21 +9,19 @@
 import UIKit
 import SwiftImage
 
-var rotationCounter: Int = 0
-var isFirst: Bool = false
-var firstAppear = true
-
 class tabView1ViewController: UIViewController {
     
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var angle: UITextField!
     @IBOutlet weak var waiting: UIActivityIndicatorView!
+    @IBOutlet weak var setAngle: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //loading()
-        //waiting.hidesWhenStopped = true
-        //dismiss(animated: true, completion: nil)
+        setAngle.value = 45
+    }
+    
+    @IBAction func setAngleFunc(_ sender: Any) {
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +59,7 @@ class tabView1ViewController: UIViewController {
     }
     
     @IBAction func rotate(_ sender: Any) {
+        setAngle.value = 45
         img.image = firstAlgo(img: img.image!)
         picture = img.image!
         rotationCounter += 1
