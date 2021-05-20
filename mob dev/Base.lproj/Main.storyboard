@@ -75,6 +75,49 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-UH-PiO">
+                                <rect key="frame" x="75" y="608" width="64" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sepia"/>
+                                <connections>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="Ki8-99-rVF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k2-1e-TzX">
+                                <rect key="frame" x="140" y="608" width="64" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RB"/>
+                                <connections>
+                                    <action selector="RedBlueSwap:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="ii9-k7-R8O"/>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="LLo-hn-t5A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfS-7V-CHY">
+                                <rect key="frame" x="212" y="608" width="64" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BW"/>
+                                <connections>
+                                    <action selector="BlackLivesMatter:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="tV6-F0-8HJ"/>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="24C-Ds-7kq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE0-hO-E2P">
+                                <rect key="frame" x="274" y="608" width="64" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="AbsoR"/>
+                                <connections>
+                                    <action selector="AbsoluteRed:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="znz-sr-ndo"/>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="O1y-CK-AeC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vea-zK-P5G">
+                                <rect key="frame" x="12" y="608" width="64" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Negativ"/>
+                                <connections>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="HLG-E1-jSh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yrb-V7-VWs"/>
                         <color key="backgroundColor" red="0.18523582820000001" green="0.20291090010000001" blue="0.2198042274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRD-Fx-cx4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2313" y="620"/>
+            <point key="canvasLocation" x="2311.594202898551" y="619.56521739130437"/>
         </scene>
         <!--Scaling-->
         <scene sceneID="JGu-st-q0v">
