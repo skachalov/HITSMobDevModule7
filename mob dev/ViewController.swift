@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        self.tabBarController?.navigationItem.hidesBackButton = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(load(_ :)))
         img.addGestureRecognizer(tap)
         img.isUserInteractionEnabled = true
@@ -31,6 +32,11 @@ class ViewController: UIViewController {
         picture = UIImage()
         mainPicture = UIImage()
         firstAppear = true
+        operations = [String]()
+        action = [Double]()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
 
     @objc func load(_ sender: UITapGestureRecognizer) {

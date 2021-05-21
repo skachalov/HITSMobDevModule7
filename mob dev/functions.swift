@@ -31,10 +31,42 @@ func firstAlgo(img: UIImage) -> UIImage {
     }
     
     let outImage = newImage.uiImage
-    picture = newImage.uiImage
     
     return outImage
 }
+
+func firstAlgoBonus(img: UIImage, angle: Double) -> UIImage {
+    
+    let angleVal = angle * .pi / 180
+    let image = Image<RGBA<UInt8>>(uiImage: img)
+    let height = image.height
+    let width = image.width
+    
+    var newImage = Image<RGBA<UInt8>>(width: width, height: height, pixel: .black)
+    
+    let centerX = Int(width/2)
+    let centerY = Int(height/2)
+    
+    for x in 0..<width {
+        for y in 0..<height {
+            let xp1 = Int( Double(x-centerX) - Double(y-centerY) * tan(angleVal/2) + Double(centerX)  )
+            let yp1 = Int( Double(y-centerY) + Double(centerY)  )
+            
+            let xp2 = Int( Double(xp1-centerX) + Double(centerX) )
+            let yp2 = Int( Double(xp1-centerX) * sin(angleVal) + Double(yp1-centerY) + Double(centerY) )
+            
+            let xp3 = Int( Double(xp2-centerX) - Double(yp2-centerY) * tan(angleVal/2) + Double(centerX) )
+            let yp3 = Int( Double(yp2-centerY) + Double(centerY) )
+            
+            if 0  <= xp3 && xp3 < width && 0 <= yp3 && yp3 < height {
+                    newImage[xp3, yp3] = image[x, y]
+            }
+        }
+    }
+    
+    return newImage.uiImage
+}
+
 
 func buildMipmap(height: Int, width: Int, k: Double) -> (width: Int, height: Int) {
     var nearest: Int = 1
@@ -143,3 +175,188 @@ func thirdAlgo(img: UIImage, k: Double) -> UIImage {
 }
 
 
+func getMassivOfPixels(img: UIImage) -> UnsafeMutableBufferPointer<UInt32> {
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+
+    let bitsPerComponent = Int(8)
+    let bytesPerRow = 4 * width
+    let colorSpace = CGColorSpaceCreateDeviceRGB()
+    let rawData = UnsafeMutablePointer<UInt32>.allocate(capacity: (width * height))
+    let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
+    let CGPointZero = CGPoint(x: 0, y: 0)
+    let rect = CGRect(origin: CGPointZero, size: (image.size))
+
+
+
+    let imageContext = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)
+
+    imageContext?.draw(image.cgImage!, in: rect)
+
+    let pixels = UnsafeMutableBufferPointer<UInt32>(start: rawData, count: width * height)
+    return pixels
+}
+
+func Negativ(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UnsafeMutableBufferPointer<UInt32>{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+    for  y in 0..<height {
+        for  x in 0..<width{
+            
+            var p = pixels[x+y*width]
+            var tmp =  RGBAPixel(rawVal: p)
+
+            tmp.red = 255 - tmp.red
+            tmp.green = 255 - tmp.red
+            tmp.blue = 255 - tmp.blue
+            p = RGBAPixel(rawVal: tmp.raw).raw
+            pixels[x+y*width] = p
+            
+        }
+    }
+    return pixels
+}
+func AbsoluteRed(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UnsafeMutableBufferPointer<UInt32>{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+    for  y in 0..<height {
+        for  x in 0..<width{
+            
+            var p = pixels[x+y*width]
+            var tmp =  RGBAPixel(rawVal: p)
+            if (tmp.red > 244) {
+                tmp.red = 255
+            }
+            else{
+                tmp.red += 10
+            }
+            p = RGBAPixel(rawVal: tmp.raw).raw
+            pixels[x+y*width] = p
+           
+        }
+    }
+    return pixels
+}
+func Sepia(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UnsafeMutableBufferPointer<UInt32>{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+    
+    for  y in 0..<height {
+        for  x in 0..<width{
+            
+            var p = pixels[x+y*width]
+            var tmp =  RGBAPixel(rawVal: p)
+            let total = (tmp.blue / 3 + tmp.green / 3 + tmp.red / 3)
+            
+            tmp.blue = total
+            
+            if (Int(total) + 40 > 255){
+                tmp.red  = 255
+            }
+            else {
+                tmp.red = total + 40
+            }
+            
+            if (Int(total) + 20 > 255){
+                tmp.green  = 255
+            }
+            else {
+                tmp.green = total + 20
+            }
+            
+            p = RGBAPixel(rawVal: tmp.raw).raw
+            pixels[x+y*width] = p
+            
+        }
+    }
+    return pixels
+}
+func BlackLiveMAtters(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UnsafeMutableBufferPointer<UInt32>{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+    
+    for  y in 0..<height {
+        for  x in 0..<width{
+            
+            var p = pixels[x+y*width]
+            var tmp =  RGBAPixel(rawVal: p)
+            var total : UInt32  = UInt32(tmp.red) + UInt32(tmp.green) + UInt32(tmp.blue)
+            if total > 255 {
+                p = RGBAPixel(rawVal: 0).raw
+                pixels[x+y*width] = p
+            }
+            else {
+                p = RGBAPixel(rawVal: 0xFFFFFFFF).raw
+                pixels[x+y*width] = p
+            }
+            
+        }
+    }
+    return pixels
+}
+func RedBlueSwap(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UnsafeMutableBufferPointer<UInt32>{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+    
+    for  y in 0..<height {
+        for  x in 0..<width{
+            
+            var p = pixels[x+y*width]
+            var tmp =  RGBAPixel(rawVal: p)
+            let tmpsave = tmp.blue
+            tmp.blue = tmp.red
+            tmp.red = tmpsave
+            
+            p = RGBAPixel(rawVal: tmp.raw).raw
+            pixels[x+y*width] = p
+            
+        }
+    }
+    return pixels
+}
+
+
+func ShowImgFromMassiv(pixels: UnsafeMutableBufferPointer<UInt32>, img: UIImage) -> UIImage{
+    let image = img
+
+    let height = Int((image.size.height))
+
+    let width = Int((image.size.width))
+
+    let bitsPerComponent = Int(8)
+    let bytesPerRow = 4 * width
+    let colorSpace = CGColorSpaceCreateDeviceRGB()
+    let rawData = UnsafeMutablePointer<UInt32>.allocate(capacity: (width * height))
+    let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
+    let CGPointZero = CGPoint(x: 0, y: 0)
+    let rect = CGRect(origin: CGPointZero, size: (image.size))
+
+
+
+    let imageContext = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)
+
+    imageContext?.draw(image.cgImage!, in: rect)
+    
+    let outContext = CGContext(data: pixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRow,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
+
+    let  outImage = UIImage(cgImage: outContext!.makeImage()!)
+    return outImage
+}

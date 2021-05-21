@@ -12,8 +12,7 @@ import UIKit
 
 var picture = UIImage()
 var mainPicture = UIImage()
-var rotationCounter: Int = 0
-var isFirst: Bool = false
 var firstAppear = true
-var isThird = false
-var arrayOfSize = [Double]()
+var operations = [String]()
+var action = [Double]()
+

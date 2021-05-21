@@ -23,41 +23,20 @@ class tabView1ViewController: UIViewController {
         super.viewDidLoad()
         sliderVal.value = 0
         setAngleVal.text = "0"
-        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        if (setAngleVal.text != "0") {
+            operations.append("RotationBonus")
+            action.append(Double(setAngleVal.text!)!)
+        }
     }
     
     //  повороты были решены вместе с Степаном Потаповым
     @IBAction func sliderForSetAngle(_ sender: UISlider) {
         setAngleVal.text = String(round(sender.value))
         
-        let angleVal = Double(setAngleVal.text!)! * .pi / 180
-        let image = Image<RGBA<UInt8>>(uiImage: tmpImage)
-        let height = image.height
-        let width = image.width
+        let outImage = firstAlgoBonus(img: tmpImage, angle: Double(setAngleVal.text!)!)
         
-        var newImage = Image<RGBA<UInt8>>(width: width, height: height, pixel: .black)
-        
-        let centerX = Int(width/2)
-        let centerY = Int(height/2)
-        
-        for x in 0..<width {
-            for y in 0..<height {
-                let xp1 = Int( Double(x-centerX) - Double(y-centerY) * tan(angleVal/2) + Double(centerX)  )
-                let yp1 = Int( Double(y-centerY) + Double(centerY)  )
-                
-                let xp2 = Int( Double(xp1-centerX) + Double(centerX) )
-                let yp2 = Int( Double(xp1-centerX) * sin(angleVal) + Double(yp1-centerY) + Double(centerY) )
-                
-                let xp3 = Int( Double(xp2-centerX) - Double(yp2-centerY) * tan(angleVal/2) + Double(centerX) )
-                let yp3 = Int( Double(yp2-centerY) + Double(centerY) )
-                
-                if 0  <= xp3 && xp3 < width && 0 <= yp3 && yp3 < height {
-                        newImage[xp3, yp3] = image[x, y]
-                }
-            }
-        }
-        
-        let outImage = newImage.uiImage
         img.image = outImage
         picture = outImage
     }
@@ -105,6 +84,9 @@ class tabView1ViewController: UIViewController {
         img.image = firstAlgo(img: tmpImage)
         picture = img.image!
         tmpImage = picture
+        
+        operations.append("Rotation")
+        action.append(0.0)
         
     }
 }

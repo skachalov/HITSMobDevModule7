@@ -17,10 +17,10 @@
 		3C2557B22650F737005DC919 /* blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2557B12650F737005DC919 /* blur.swift */; };
 		3C32569C2654E78000611852 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32569B2654E78000611852 /* Filters.swift */; };
 		3C32569E2654FE9400611852 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32569D2654FE9400611852 /* functions.swift */; };
-		3C3256A02654FFAE00611852 /* finalPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32569F2654FFAE00611852 /* finalPicture.swift */; };
 		3C6134A9265787DE00419971 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6134A8265787DE00419971 /* logo.png */; };
 		3C6134AB2657888F00419971 /* globalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134AA2657888F00419971 /* globalVars.swift */; };
 		3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134B92657ACEC00419971 /* tabView7ViewController.swift */; };
+		3C6134C52657E56200419971 /* saverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134C42657E56200419971 /* saverViewController.swift */; };
 		3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3A264EAFE800E97504 /* testViewController.swift */; };
 		3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */; };
 		5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5939EBEF263BD67500802BE3 /* AppDelegate.swift */; };
@@ -45,10 +45,10 @@
 		3C2557B12650F737005DC919 /* blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blur.swift; sourceTree = "<group>"; };
 		3C32569B2654E78000611852 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		3C32569D2654FE9400611852 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
-		3C32569F2654FFAE00611852 /* finalPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalPicture.swift; sourceTree = "<group>"; };
 		3C6134A8265787DE00419971 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3C6134AA2657888F00419971 /* globalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVars.swift; sourceTree = "<group>"; };
 		3C6134B92657ACEC00419971 /* tabView7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView7ViewController.swift; sourceTree = "<group>"; };
+		3C6134C42657E56200419971 /* saverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saverViewController.swift; sourceTree = "<group>"; };
 		3CF61E3A264EAFE800E97504 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView1ViewController.swift; sourceTree = "<group>"; };
 		5939EBEC263BD67500802BE3 /* mob dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,9 +105,9 @@
 				5939EBEF263BD67500802BE3 /* AppDelegate.swift */,
 				5939EBF1263BD67500802BE3 /* ViewController.swift */,
 				3C32569D2654FE9400611852 /* functions.swift */,
-				3C32569F2654FFAE00611852 /* finalPicture.swift */,
 				3C2326DD2642925200EC37BB /* structForPixels.swift */,
 				5939EBF3263BD67500802BE3 /* Main.storyboard */,
+				3C6134C42657E56200419971 /* saverViewController.swift */,
 				3C6134B92657ACEC00419971 /* tabView7ViewController.swift */,
 				A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */,
 				3C25579B2650D41A005DC919 /* tabView5ViewController.swift */,
@@ -224,7 +224,7 @@
 				3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */,
 				A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
-				3C3256A02654FFAE00611852 /* finalPicture.swift in Sources */,
+				3C6134C52657E56200419971 /* saverViewController.swift in Sources */,
 				3C2557962650D3A2005DC919 /* tabView2ViewController.swift in Sources */,
 				3C32569C2654E78000611852 /* Filters.swift in Sources */,
 				3C25579A2650D3F9005DC919 /* tabView4ViewController.swift in Sources */,

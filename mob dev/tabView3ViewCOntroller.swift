@@ -36,8 +36,6 @@ class tabView3ViewCOntroller: UIViewController {
 
         img.image = thirdAlgo(img: img.image!, k: k)
         picture = img.image!
-        isThird = true
-        arrayOfSize.append(k)
     }
     
 
