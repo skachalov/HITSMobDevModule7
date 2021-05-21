@@ -328,19 +328,6 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-zQ-OIl">
-                                <rect key="frame" x="27" y="565" width="359" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.24324983359999999" green="0.25891369580000001" blue="0.27870246770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbI-HV-3Q8">
-                                <rect key="frame" x="158" y="502" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1496478319" green="0.16316083070000001" blue="0.1766304672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-Ss-4Ws">
                                 <rect key="frame" x="39" y="501" width="42" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -356,6 +343,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZg-YD-Dtw">
+                                <rect key="frame" x="158" y="502" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.15048551560000001" green="0.16595089439999999" blue="0.17654895779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-45" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="V8V-Bb-wQ8">
+                                <rect key="frame" x="23" y="565" width="367" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.24324983359999999" green="0.25891369580000001" blue="0.27870246770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderForSetAngle:" destination="70h-Po-G4z" eventType="valueChanged" id="iqe-0K-lN8"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KE0-LZ-Ai0"/>
                         <color key="backgroundColor" red="0.1844055355" green="0.20014184709999999" blue="0.21988338230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -363,7 +366,8 @@
                     <tabBarItem key="tabBarItem" title="Rotation" image="rotate.right" catalog="system" id="qCx-4a-44O"/>
                     <connections>
                         <outlet property="img" destination="fnR-dh-Wct" id="JLU-Qc-FgJ"/>
-                        <outlet property="setAngle" destination="fq0-zQ-OIl" id="vno-o6-qNc"/>
+                        <outlet property="setAngleVal" destination="MZg-YD-Dtw" id="8x9-MD-NFv"/>
+                        <outlet property="sliderVal" destination="V8V-Bb-wQ8" id="177-nN-1mm"/>
                         <outlet property="waiting" destination="zEG-aZ-dj7" id="2Y2-x3-Rhf"/>
                     </connections>
                 </viewController>

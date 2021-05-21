@@ -214,6 +214,7 @@ class tabView2ViewController: UIViewController {
         var massiv = getMassivOfPixels()
         massiv = Negativ(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
+        picture = img.image!
       
     }
     
@@ -221,6 +222,7 @@ class tabView2ViewController: UIViewController {
         var massiv = getMassivOfPixels()
         massiv = Sepia(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
+        picture = img.image!
     }
     
     
@@ -228,17 +230,20 @@ class tabView2ViewController: UIViewController {
         var massiv = getMassivOfPixels()
         massiv = RedBlueSwap(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
+        picture = img.image!
     }
     
     @IBAction func BlackLivesMatter(_ sender: Any) {
         var massiv = getMassivOfPixels()
         massiv = BlackLiveMAtters(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
+        picture = img.image!
     }
     
     @IBAction func AbsoluteRed(_ sender: Any) {
         var massiv = getMassivOfPixels()
         massiv = AbsoluteRed(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
+        picture = img.image!
     }
 }

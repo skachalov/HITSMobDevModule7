@@ -9,9 +9,7 @@
 import UIKit
 
 class testViewController: UITabBarController {
-    
-//    var picture: UIImage?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
