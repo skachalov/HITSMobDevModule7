@@ -33,6 +33,7 @@ class tabView3ViewCOntroller: UIViewController {
     
     @IBAction func start(_ sender: Any) {
         let k: Double = Double(coeff.text!)!
+        resizeCoeff *= k
 
         img.image = thirdAlgo(img: img.image!, k: k)
         picture = img.image!

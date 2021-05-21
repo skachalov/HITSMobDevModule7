@@ -11,9 +11,11 @@ import UIKit
 class saverViewController: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.layer.cornerRadius = 10
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -52,8 +54,18 @@ class saverViewController: UIViewController {
                 mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
             }
         }
+        if face == true {
+            let tmp = OCVWrapper.classifyImage(mainPicture)
+              if ( tmp != nil){
+                mainPicture = tmp!
+              }
+        }
+        if resizeCoeff != 1.0 {
+            mainPicture = thirdAlgo(img: mainPicture, k: resizeCoeff)
+        }
+        print(resizeCoeff)
         img.image = mainPicture
-        UIImageWriteToSavedPhotosAlbum(picture, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(mainPicture, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

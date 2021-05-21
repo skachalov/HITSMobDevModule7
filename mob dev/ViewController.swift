@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         firstAppear = true
         operations = [String]()
         action = [Double]()
+        resizeCoeff = 1.0
+        face = false
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated: false)

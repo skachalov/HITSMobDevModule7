@@ -15,4 +15,6 @@ var mainPicture = UIImage()
 var firstAppear = true
 var operations = [String]()
 var action = [Double]()
+var resizeCoeff: Double = 1.0
+var face = false
 

@@ -12,10 +12,11 @@ class tabView5ViewController: UIViewController {
 
     
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        button.layer.cornerRadius = 10
 
     }
     
@@ -27,6 +28,8 @@ class tabView5ViewController: UIViewController {
         let tmp = OCVWrapper.classifyImage(img.image)
           if ( tmp != nil){
               img.image = tmp
+              picture = img.image!
+              face = true
           }
     }
     
