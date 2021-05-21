@@ -12,6 +12,7 @@ class saverViewController: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var waiting: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +64,9 @@ class saverViewController: UIViewController {
         if resizeCoeff != 1.0 {
             mainPicture = thirdAlgo(img: mainPicture, k: resizeCoeff)
         }
-        print(resizeCoeff)
         img.image = mainPicture
+        waiting.stopAnimating()
+        waiting.hidesWhenStopped = true
         UIImageWriteToSavedPhotosAlbum(mainPicture, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     

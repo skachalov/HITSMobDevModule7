@@ -136,7 +136,7 @@
             <objects>
                 <viewController storyboardIdentifier="tabview3" id="ipq-vX-GLq" customClass="tabView3ViewCOntroller" customModule="mob_dev" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XbA-vT-B44">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d97-wY-9VV">
@@ -194,7 +194,7 @@
             <objects>
                 <viewController storyboardIdentifier="tabiew4" id="ErO-NL-fQH" customClass="tabView4ViewController" customModule="mob_dev" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="shX-Ar-2N6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-hG-u7Q">
@@ -280,7 +280,7 @@
             <objects>
                 <viewController storyboardIdentifier="tabview7" id="Bva-FT-Pwa" customClass="tabView7ViewController" customModule="mob_dev" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jhA-gc-598">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-88-YHA">
@@ -457,6 +457,12 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-Vh-w0q">
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <color key="color" systemColor="systemOrangeColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QHA-4S-CS9"/>
                         <color key="backgroundColor" red="0.1844055355" green="0.20014184709999999" blue="0.21988338230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -465,6 +471,7 @@
                     <connections>
                         <outlet property="button" destination="5kv-6I-Xcd" id="qw7-Bz-rwi"/>
                         <outlet property="img" destination="yUu-Ke-w0f" id="74m-Su-eiV"/>
+                        <outlet property="waiting" destination="8Ta-Vh-w0q" id="oFx-08-l8M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5O-mK-ca4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
