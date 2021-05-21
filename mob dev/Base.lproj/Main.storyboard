@@ -75,47 +75,44 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-UH-PiO">
-                                <rect key="frame" x="75" y="608" width="64" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sepia"/>
-                                <connections>
-                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="Ki8-99-rVF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k2-1e-TzX">
-                                <rect key="frame" x="140" y="608" width="64" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RB"/>
-                                <connections>
-                                    <action selector="RedBlueSwap:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="ii9-k7-R8O"/>
-                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="LLo-hn-t5A"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfS-7V-CHY">
-                                <rect key="frame" x="212" y="608" width="64" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="BW"/>
-                                <connections>
-                                    <action selector="BlackLivesMatter:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="tV6-F0-8HJ"/>
-                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="24C-Ds-7kq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE0-hO-E2P">
-                                <rect key="frame" x="274" y="608" width="64" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="AbsoR"/>
-                                <connections>
-                                    <action selector="AbsoluteRed:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="znz-sr-ndo"/>
-                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="O1y-CK-AeC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vea-zK-P5G">
-                                <rect key="frame" x="12" y="608" width="64" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grj-om-BXz">
+                                <rect key="frame" x="20" y="584" width="74" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Negativ"/>
                                 <connections>
-                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="HLG-E1-jSh"/>
+                                    <action selector="Negativ:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="gYt-D5-Zci"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksH-qq-cC5">
+                                <rect key="frame" x="94" y="584" width="74" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sepia"/>
+                                <connections>
+                                    <action selector="Sepia:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="vCw-nH-FWc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaZ-hG-1bp">
+                                <rect key="frame" x="176" y="585" width="74" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="B&amp;W"/>
+                                <connections>
+                                    <action selector="BlackLivesMatter:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="0QV-AV-hMF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woS-0V-szd">
+                                <rect key="frame" x="258" y="585" width="74" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="AbsoR"/>
+                                <connections>
+                                    <action selector="AbsoluteRed:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="gQg-Ob-cJh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-vk-eQO">
+                                <rect key="frame" x="320" y="585" width="74" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="B&amp;R"/>
+                                <connections>
+                                    <action selector="RedBlueSwap:" destination="iAw-Ft-AEn" eventType="touchUpInside" id="OZx-VG-llq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -201,6 +198,28 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDR-fG-02Z">
+                                <rect key="frame" x="160" y="512" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Made Mask"/>
+                                <connections>
+                                    <action selector="MakeMask:" destination="ErO-NL-fQH" eventType="touchUpInside" id="4yR-nH-Grv"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="diO-Op-8Bw">
+                                <rect key="frame" x="70" y="570" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Effect:" destination="ErO-NL-fQH" eventType="valueChanged" id="IJX-fn-YEF"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-yW-9iB">
+                                <rect key="frame" x="70" y="610" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Radius:" destination="ErO-NL-fQH" eventType="valueChanged" id="ZYe-Rb-2VO"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jeK-VQ-WPa"/>
                         <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -212,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKa-In-JmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3754" y="620"/>
+            <point key="canvasLocation" x="3753.6231884057975" y="619.56521739130437"/>
         </scene>
         <!--Item-->
         <scene sceneID="9gT-So-COq">
@@ -226,6 +245,14 @@
                                 <rect key="frame" x="12" y="81" width="390" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svE-CO-fB4">
+                                <rect key="frame" x="198" y="575" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="FindFace:" destination="AHO-al-djq" eventType="touchUpInside" id="y9k-3e-waL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m37-Sj-5Mg"/>
                         <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,6 +265,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpy-Wn-rkd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4497" y="620"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vCn-Pl-O3e">
+            <objects>
+                <viewController storyboardIdentifier="tabview7" id="Bva-FT-Pwa" customClass="tabView7ViewController" customModule="mob_dev" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhA-gc-598">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-88-YHA">
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iPj-HA-vtS"/>
+                        <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bSK-82-Fem"/>
+                    <connections>
+                        <outlet property="img" destination="dhv-88-YHA" id="tf6-Gu-TKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ny6-qA-Zig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6030" y="614"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kU4-BG-P1b">
+            <objects>
+                <viewController storyboardIdentifier="tabview6" id="Osi-FG-Vtd" customClass="tabView6ViewController" customModule="mob_dev" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TRF-lR-J66">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxf-4k-jcH">
+                                <rect key="frame" x="12" y="81" width="390" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XYf-cV-9JF"/>
+                        <color key="backgroundColor" red="0.18608003849999999" green="0.2056978941" blue="0.2197233737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="sRs-ZN-C97"/>
+                    <connections>
+                        <outlet property="img" destination="yxf-4k-jcH" id="usj-NF-Wll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqW-bV-rij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5278" y="614"/>
         </scene>
         <!--Rotation-->
         <scene sceneID="7Ri-ZC-4u2">
@@ -319,6 +396,8 @@
                         <segue destination="ipq-vX-GLq" kind="relationship" relationship="viewControllers" id="RKd-uq-djg"/>
                         <segue destination="ErO-NL-fQH" kind="relationship" relationship="viewControllers" id="dDY-jX-6CP"/>
                         <segue destination="AHO-al-djq" kind="relationship" relationship="viewControllers" id="10T-zY-dpi"/>
+                        <segue destination="Osi-FG-Vtd" kind="relationship" relationship="viewControllers" id="7f3-3D-pL4"/>
+                        <segue destination="Bva-FT-Pwa" kind="relationship" relationship="viewControllers" id="QYr-nI-pqI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLB-UE-T4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

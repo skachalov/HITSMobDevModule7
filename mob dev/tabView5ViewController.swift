@@ -19,9 +19,15 @@ class tabView5ViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         img.image = picture
     }
 
-
+    @IBAction func FindFace(_ sender: Any) {
+        let tmp = OCVWrapper.classifyImage(img.image)
+          if ( tmp != nil){
+              img.image = tmp
+          }
+    }
+    
 }

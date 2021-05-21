@@ -20,6 +20,7 @@
 		3C3256A02654FFAE00611852 /* finalPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32569F2654FFAE00611852 /* finalPicture.swift */; };
 		3C6134A9265787DE00419971 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6134A8265787DE00419971 /* logo.png */; };
 		3C6134AB2657888F00419971 /* globalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134AA2657888F00419971 /* globalVars.swift */; };
+		3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134B92657ACEC00419971 /* tabView7ViewController.swift */; };
 		3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3A264EAFE800E97504 /* testViewController.swift */; };
 		3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */; };
 		5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5939EBEF263BD67500802BE3 /* AppDelegate.swift */; };
@@ -27,20 +28,11 @@
 		5939EBF5263BD67500802BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF3263BD67500802BE3 /* Main.storyboard */; };
 		5939EBF7263BD67800802BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF6263BD67800802BE3 /* Assets.xcassets */; };
 		5939EBFA263BD67800802BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */; };
+		A17BE3B2265798DA00EBEB3B /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */; };
+		A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */; };
+		A17BE3B926579A3600EBEB3B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17BE3B826579A3600EBEB3B /* opencv2.framework */; };
+		A17BE3BD2657A21E00EBEB3B /* tabView6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3C2108332646484300859F00 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C2326DD2642925200EC37BB /* structForPixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structForPixels.swift; sourceTree = "<group>"; };
@@ -56,6 +48,7 @@
 		3C32569F2654FFAE00611852 /* finalPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalPicture.swift; sourceTree = "<group>"; };
 		3C6134A8265787DE00419971 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3C6134AA2657888F00419971 /* globalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVars.swift; sourceTree = "<group>"; };
+		3C6134B92657ACEC00419971 /* tabView7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView7ViewController.swift; sourceTree = "<group>"; };
 		3CF61E3A264EAFE800E97504 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView1ViewController.swift; sourceTree = "<group>"; };
 		5939EBEC263BD67500802BE3 /* mob dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +58,12 @@
 		5939EBF6263BD67800802BE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5939EBF9263BD67800802BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5939EBFB263BD67800802BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
+		A17BE3B3265798F000EBEB3B /* mob dev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mob dev-Bridging-Header.h"; sourceTree = "<group>"; };
+		A17BE3B4265798F000EBEB3B /* OCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCVWrapper.h; sourceTree = "<group>"; };
+		A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OCVWrapper.mm; sourceTree = "<group>"; };
+		A17BE3B826579A3600EBEB3B /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "mob dev/Frameworks/opencv2.framework"; sourceTree = "<group>"; };
+		A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView6ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17BE3B926579A3600EBEB3B /* opencv2.framework in Frameworks */,
 				3C2108362646491000859F00 /* SwiftImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +84,7 @@
 			children = (
 				5939EBEE263BD67500802BE3 /* mob dev */,
 				5939EBED263BD67500802BE3 /* Products */,
+				A17BE3B726579A3600EBEB3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +99,7 @@
 		5939EBEE263BD67500802BE3 /* mob dev */ = {
 			isa = PBXGroup;
 			children = (
+				A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */,
 				3C6134A8265787DE00419971 /* logo.png */,
 				3C25579D2650E9AB005DC919 /* pictureForMob.jpg */,
 				5939EBEF263BD67500802BE3 /* AppDelegate.swift */,
@@ -106,6 +108,8 @@
 				3C32569F2654FFAE00611852 /* finalPicture.swift */,
 				3C2326DD2642925200EC37BB /* structForPixels.swift */,
 				5939EBF3263BD67500802BE3 /* Main.storyboard */,
+				3C6134B92657ACEC00419971 /* tabView7ViewController.swift */,
+				A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */,
 				3C25579B2650D41A005DC919 /* tabView5ViewController.swift */,
 				3C2557992650D3F9005DC919 /* tabView4ViewController.swift */,
 				3C25579F2650EF7C005DC919 /* tabView3ViewCOntroller.swift */,
@@ -119,8 +123,19 @@
 				5939EBFB263BD67800802BE3 /* Info.plist */,
 				3C2557B12650F737005DC919 /* blur.swift */,
 				3C255794264EF619005DC919 /* MyPlayground.playground */,
+				A17BE3B4265798F000EBEB3B /* OCVWrapper.h */,
+				A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */,
+				A17BE3B3265798F000EBEB3B /* mob dev-Bridging-Header.h */,
 			);
 			path = "mob dev";
+			sourceTree = "<group>";
+		};
+		A17BE3B726579A3600EBEB3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A17BE3B826579A3600EBEB3B /* opencv2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +148,6 @@
 				5939EBE8263BD67500802BE3 /* Sources */,
 				5939EBE9263BD67500802BE3 /* Frameworks */,
 				5939EBEA263BD67500802BE3 /* Resources */,
-				3C2108332646484300859F00 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +173,7 @@
 				TargetAttributes = {
 					5939EBEB263BD67500802BE3 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -192,6 +207,7 @@
 				3C6134A9265787DE00419971 /* logo.png in Resources */,
 				3C25579E2650E9AB005DC919 /* pictureForMob.jpg in Resources */,
 				5939EBF7263BD67800802BE3 /* Assets.xcassets in Resources */,
+				A17BE3B2265798DA00EBEB3B /* haarcascade_frontalface_default.xml in Resources */,
 				5939EBF5263BD67500802BE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +221,8 @@
 			files = (
 				5939EBF2263BD67500802BE3 /* ViewController.swift in Sources */,
 				3C25579C2650D41A005DC919 /* tabView5ViewController.swift in Sources */,
+				3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */,
+				A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
 				3C3256A02654FFAE00611852 /* finalPicture.swift in Sources */,
 				3C2557962650D3A2005DC919 /* tabView2ViewController.swift in Sources */,
@@ -216,6 +234,7 @@
 				3C2557A02650EF7C005DC919 /* tabView3ViewCOntroller.swift in Sources */,
 				3C2557B22650F737005DC919 /* blur.swift in Sources */,
 				5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */,
+				A17BE3BD2657A21E00EBEB3B /* tabView6ViewController.swift in Sources */,
 				3C32569E2654FE9400611852 /* functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +381,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
+				);
 				INFOPLIST_FILE = "mob dev/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,6 +394,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "hell.mob-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mob dev/mob dev-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,7 +405,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
+				);
 				INFOPLIST_FILE = "mob dev/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,6 +418,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "hell.mob-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mob dev/mob dev-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

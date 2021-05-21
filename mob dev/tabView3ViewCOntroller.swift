@@ -23,7 +23,7 @@ class tabView3ViewCOntroller: UIViewController {
         button.layer.cornerRadius = 10
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         img.image = picture
     }
 

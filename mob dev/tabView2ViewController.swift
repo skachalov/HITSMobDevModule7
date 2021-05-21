@@ -20,7 +20,7 @@ class tabView2ViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         img.image = picture
     }
 
@@ -82,7 +82,12 @@ class tabView2ViewController: UIViewController {
                 
                 var p = pixels[x+y*width]
                 var tmp =  RGBAPixel(rawVal: p)
-                tmp.red = 255
+                if (tmp.red > 244) {
+                    tmp.red = 255
+                }
+                else{
+                    tmp.red += 10
+                }
                 p = RGBAPixel(rawVal: tmp.raw).raw
                 pixels[x+y*width] = p
                
@@ -209,8 +214,7 @@ class tabView2ViewController: UIViewController {
         var massiv = getMassivOfPixels()
         massiv = Negativ(pixels: massiv)
         img.image = ShowImgFromMassiv(pixels: massiv)
-        
-        
+      
     }
     
     @IBAction func Sepia(_ sender: Any) {
