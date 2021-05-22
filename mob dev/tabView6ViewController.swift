@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftImage
 
 class tabView6ViewController: UIViewController {
 
@@ -20,4 +21,29 @@ class tabView6ViewController: UIViewController {
         img.image = picture
     }
 
+    var koef : Int = 0
+    var sizeOfD : Int = 0
+    @IBAction func Size(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        sizeOfD = currentValue
+    }
+    
+    @IBAction func Koef(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        koef = currentValue
+    }
+    
+    @IBAction func qw(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: img)
+        let radDan = koef
+        let sizeOfDraw = sizeOfD
+        img.image = GaussianBlur.createBlurredImage(radius: radDan, image: img.image!,gottenBeginX: 10, gottenBeginY: 10 ,gottenX: 30, gottenY: 30 ).uiImage
+        print(point.x)
+        print(point.y)
+    }
+    
+    
+    
+    
+    
 }

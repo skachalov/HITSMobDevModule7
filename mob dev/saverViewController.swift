@@ -22,6 +22,9 @@ class saverViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
     override func viewDidAppear(_ animated: Bool) {
+        var mask: Bool = false
+        var maskVal: Double = 0
+        
         for i in 0..<operations.count {
             if operations[i] == "Rotation" {
                 mainPicture = firstAlgo(img: mainPicture)
@@ -53,6 +56,14 @@ class saverViewController: UIViewController {
                 var massiv = getMassivOfPixels(img: mainPicture)
                 massiv = mob_dev.AbsoluteRed(pixels: massiv, img: mainPicture)
                 mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+            }
+            if operations[i] == "Mask" && mask == false {
+                maskVal = action[i]
+                mask = true
+            } else {
+                mainPicture = UnsharpMask(koef: Int(maskVal), radiusDan: Int(action[i]), img: mainPicture).uiImage
+                maskVal = 0
+                mask = false
             }
         }
         if face == true {

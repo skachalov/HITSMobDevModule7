@@ -39,7 +39,7 @@ class tabView1ViewController: UIViewController {
         
         img.image = outImage
         picture = outImage
-    }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         dismiss(animated: false, completion: nil)

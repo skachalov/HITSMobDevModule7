@@ -19,7 +19,6 @@
 		3C32569E2654FE9400611852 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32569D2654FE9400611852 /* functions.swift */; };
 		3C6134A9265787DE00419971 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6134A8265787DE00419971 /* logo.png */; };
 		3C6134AB2657888F00419971 /* globalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134AA2657888F00419971 /* globalVars.swift */; };
-		3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134B92657ACEC00419971 /* tabView7ViewController.swift */; };
 		3C6134C52657E56200419971 /* saverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134C42657E56200419971 /* saverViewController.swift */; };
 		3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3A264EAFE800E97504 /* testViewController.swift */; };
 		3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */; };
@@ -30,8 +29,8 @@
 		5939EBFA263BD67800802BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */; };
 		A17BE3B2265798DA00EBEB3B /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */; };
 		A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */; };
-		A17BE3B926579A3600EBEB3B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17BE3B826579A3600EBEB3B /* opencv2.framework */; };
 		A17BE3BD2657A21E00EBEB3B /* tabView6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */; };
+		A1ABFF802658505F00E0C2B3 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17BE3B826579A3600EBEB3B /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		3C32569D2654FE9400611852 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		3C6134A8265787DE00419971 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3C6134AA2657888F00419971 /* globalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVars.swift; sourceTree = "<group>"; };
-		3C6134B92657ACEC00419971 /* tabView7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView7ViewController.swift; sourceTree = "<group>"; };
 		3C6134C42657E56200419971 /* saverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saverViewController.swift; sourceTree = "<group>"; };
 		3CF61E3A264EAFE800E97504 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView1ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A17BE3B926579A3600EBEB3B /* opencv2.framework in Frameworks */,
+				A1ABFF802658505F00E0C2B3 /* opencv2.framework in Frameworks */,
 				3C2108362646491000859F00 /* SwiftImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +106,6 @@
 				3C2326DD2642925200EC37BB /* structForPixels.swift */,
 				5939EBF3263BD67500802BE3 /* Main.storyboard */,
 				3C6134C42657E56200419971 /* saverViewController.swift */,
-				3C6134B92657ACEC00419971 /* tabView7ViewController.swift */,
 				A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */,
 				3C25579B2650D41A005DC919 /* tabView5ViewController.swift */,
 				3C2557992650D3F9005DC919 /* tabView4ViewController.swift */,
@@ -221,7 +218,6 @@
 			files = (
 				5939EBF2263BD67500802BE3 /* ViewController.swift in Sources */,
 				3C25579C2650D41A005DC919 /* tabView5ViewController.swift in Sources */,
-				3C6134BA2657ACEC00419971 /* tabView7ViewController.swift in Sources */,
 				A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
 				3C6134C52657E56200419971 /* saverViewController.swift in Sources */,
@@ -386,6 +382,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
+					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
 				);
 				INFOPLIST_FILE = "mob dev/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -409,6 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
 					"$(PROJECT_DIR)/mob\\ dev/Frameworks",
 				);
 				INFOPLIST_FILE = "mob dev/Info.plist";

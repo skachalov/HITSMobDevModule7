@@ -1,11 +1,12 @@
 import UIKit
 import SwiftImage
 
-cos(45 * Double.pi / 180)
-tan(45/2 * Double.pi/180)
+for i in 0..<6 {
+    if i==3 {
+        continue
+    }
+  print(i)
+}
+
 
 
-let image = Image<RGBA<UInt8>>(named: "pictureForMob.jpg")!
-let result = image.rotated(by: .pi/4)
-result.uiImage
-                                            

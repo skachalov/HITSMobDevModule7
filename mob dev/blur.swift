@@ -18,11 +18,11 @@ import SwiftImage
 
 final class GaussianBlur {
     
-    static func createBlurredImage(radius: Int, image: UIImage) -> Image<RGBA<UInt8>> {
+    static func createBlurredImage(radius: Int, image: UIImage,gottenBeginX: Int, gottenBeginY: Int, gottenX : Int, gottenY : Int) -> Image<RGBA<UInt8>> {
         let inputImage = Image<RGBA<UInt8>>(uiImage: image)
         var outputImage = Image<RGBA<UInt8>>(uiImage: image)
-
-        
+        let positionX : Int = gottenX
+        let positionY : Int = gottenY
         let sigma = max(Double(radius / 2), 1)
 
         
@@ -54,9 +54,12 @@ final class GaussianBlur {
             }
         }
 
+        let radiusBeginX: Int = gottenBeginX
         
-        for x in radius..<(inputImage.width - radius) {
-            for y in radius..<(inputImage.height - radius) {
+        let radiusBeginY: Int = gottenBeginY
+        
+        for x in radiusBeginX..<(positionX - radiusBeginX) { // inputImage.width
+            for y in radiusBeginY..<(positionY - radiusBeginY) { //inputImage.height
 
                 var redValue = 0.0
                 var greenValue = 0.0
