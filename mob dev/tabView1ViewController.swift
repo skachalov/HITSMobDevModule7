@@ -71,8 +71,10 @@ class tabView1ViewController: UIViewController {
                 newHeight = Int((height*size)/width)
             }
             picture = tmp.resizedTo(width: newWidth, height: newHeight, interpolatedBy: .nearestNeighbor).uiImage
+            isChanged = true
         } else {
             picture = mainPicture
+            isChanged = false
         }
         img.image = picture
     }

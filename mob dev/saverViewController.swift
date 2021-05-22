@@ -22,62 +22,70 @@ class saverViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
     override func viewDidAppear(_ animated: Bool) {
-        var mask: Bool = false
-        var maskVal: Double = 0
         
-        for i in 0..<operations.count {
-            if operations[i] == "Rotation" {
-                mainPicture = firstAlgo(img: mainPicture)
+        if (isChanged == true) {
+            var mask: Bool = false
+            var maskVal: Double = 0
+            
+            for i in 0..<operations.count {
+                if operations[i] == "Rotation" {
+                    mainPicture = firstAlgo(img: mainPicture)
+                }
+                if operations[i] == "RotationBonus" {
+                    mainPicture = firstAlgoBonus(img: mainPicture, angle: action[i])
+                }
+                if operations[i] == "Negative" {
+                    var massiv = getMassivOfPixels(img: mainPicture)
+                    massiv = mob_dev.Negativ(pixels: massiv, img: mainPicture)
+                    mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+                }
+                if operations[i] == "Sepia" {
+                    var massiv = getMassivOfPixels(img: mainPicture)
+                    massiv = mob_dev.Sepia(pixels: massiv, img: mainPicture)
+                    mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+                }
+                if operations[i] == "RedBlueSwap" {
+                    var massiv = getMassivOfPixels(img: mainPicture)
+                    massiv = mob_dev.RedBlueSwap(pixels: massiv, img: mainPicture)
+                    mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+                }
+                if operations[i] == "BlackLivesMatter" {
+                    var massiv = getMassivOfPixels(img: mainPicture)
+                    massiv = BlackLiveMAtters(pixels: massiv, img: mainPicture)
+                    mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+                }
+                if operations[i] == "AbsoluteRed" {
+                    var massiv = getMassivOfPixels(img: mainPicture)
+                    massiv = mob_dev.AbsoluteRed(pixels: massiv, img: mainPicture)
+                    mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+                }
+                if operations[i] == "Mask" && mask == false {
+                    maskVal = action[i]
+                    mask = true
+                } else if (operations[i] == "Mask" && mask == true) {
+                    mainPicture = UnsharpMask(koef: Int(maskVal), radiusDan: Int(action[i]), img: mainPicture).uiImage
+                    maskVal = 0
+                    mask = false
+                }
             }
-            if operations[i] == "RotationBonus" {
-                mainPicture = firstAlgoBonus(img: mainPicture, angle: action[i])
+            if face == true {
+                let tmp = OCVWrapper.classifyImage(mainPicture)
+                  if ( tmp != nil){
+                    mainPicture = tmp!
+                  }
             }
-            if operations[i] == "Negative" {
-                var massiv = getMassivOfPixels(img: mainPicture)
-                massiv = mob_dev.Negativ(pixels: massiv, img: mainPicture)
-                mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
+            if resizeCoeff != 1.0 {
+                mainPicture = thirdAlgo(img: mainPicture, k: resizeCoeff)
             }
-            if operations[i] == "Sepia" {
-                var massiv = getMassivOfPixels(img: mainPicture)
-                massiv = mob_dev.Sepia(pixels: massiv, img: mainPicture)
-                mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
-            }
-            if operations[i] == "RedBlueSwap" {
-                var massiv = getMassivOfPixels(img: mainPicture)
-                massiv = mob_dev.RedBlueSwap(pixels: massiv, img: mainPicture)
-                mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
-            }
-            if operations[i] == "BlackLivesMatter" {
-                var massiv = getMassivOfPixels(img: mainPicture)
-                massiv = BlackLiveMAtters(pixels: massiv, img: mainPicture)
-                mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
-            }
-            if operations[i] == "AbsoluteRed" {
-                var massiv = getMassivOfPixels(img: mainPicture)
-                massiv = mob_dev.AbsoluteRed(pixels: massiv, img: mainPicture)
-                mainPicture = ShowImgFromMassiv(pixels: massiv, img: mainPicture)
-            }
-            if operations[i] == "Mask" && mask == false {
-                maskVal = action[i]
-                mask = true
-            } else {
-                mainPicture = UnsharpMask(koef: Int(maskVal), radiusDan: Int(action[i]), img: mainPicture).uiImage
-                maskVal = 0
-                mask = false
-            }
+            img.image = mainPicture
+            waiting.stopAnimating()
+            waiting.hidesWhenStopped = true
+        } else {
+            mainPicture = picture
+            img.image = mainPicture
+            waiting.stopAnimating()
+            waiting.hidesWhenStopped = true
         }
-        if face == true {
-            let tmp = OCVWrapper.classifyImage(mainPicture)
-              if ( tmp != nil){
-                mainPicture = tmp!
-              }
-        }
-        if resizeCoeff != 1.0 {
-            mainPicture = thirdAlgo(img: mainPicture, k: resizeCoeff)
-        }
-        img.image = mainPicture
-        waiting.stopAnimating()
-        waiting.hidesWhenStopped = true
         UIImageWriteToSavedPhotosAlbum(mainPicture, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     

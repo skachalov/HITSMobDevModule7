@@ -11,6 +11,7 @@ import UIKit
 
 
 var picture = UIImage()
+var isChanged = false
 var mainPicture = UIImage()
 var firstAppear = true
 var operations = [String]()
