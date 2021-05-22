@@ -41,9 +41,4 @@ class tabView6ViewController: UIViewController {
         print(point.x)
         print(point.y)
     }
-    
-    
-    
-    
-    
 }

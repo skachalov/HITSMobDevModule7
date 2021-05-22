@@ -1,77 +1,118 @@
-//import UIKit
 //
-//var str = "Hello, playground"
+// blur.swift
+// mob dev
 //
-//let image = UIImage(named: "ggwp.jpg")
+// Created by Тимофей Веретнов on 07.05.2021.
+// Copyright © 2021 Пользователь. All rights reserved.
+
 //
-//let height = Int((image?.size.height)!)
+// GaussianBlur.swift
 //
-//let width = Int((image?.size.width)!)
+// Created by Aryaman Sharda on 9/12/20.
+// Copyright © 2020 com.DigitalBunker. All rights reserved.
 //
-//let bitsPerComponent = Int(8)
-//let bytesPerRow = 4 * width
-//let colorSpace = CGColorSpaceCreateDeviceRGB()
-//let rawData = UnsafeMutablePointer<UInt32>.allocate(capacity: (width * height))
-//let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
-//let CGPointZero = CGPoint(x: 0, y: 0)
-//let rect = CGRect(origin: CGPointZero, size: (image?.size)!)
-//
-//
-//
-//let imageContext = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)
-//
-//imageContext?.draw(image!.cgImage!, in: rect)
-//
-//let pixels = UnsafeMutableBufferPointer<UInt32>(start: rawData, count: width * height)
-//
-//for  y in 0..<200 {
-//    for  x in 0..<200{
-//        var p = pixels[x+y*width]
-//        var tmp =  RGBAPixel(rawVal: p)
-//        tmp.red = 255
-//        p = RGBAPixel(rawVal: tmp.raw).raw
-//        pixels[x+y*width] = p
-//        
-//        var p = pixels[x+y*width]
-//        var tmp =  RGBAPixel(rawVal: p)
-//
-//        tmp.red = 255 - tmp.red
-//        tmp.green = 255 - tmp.red
-//        tmp.blue = 255 - tmp.blue
-//        p = RGBAPixel(rawVal: tmp.raw).raw
-//        pixels[x+y*width] = p
-//
-//        var p = pixels[x+y*width]
-//        var tmp =  RGBAPixel(rawVal: p)
-//        var total : UInt32  = UInt32(tmp.red) + UInt32(tmp.green) + UInt32(tmp.blue)
-//        if total > 255 {
-//            p = RGBAPixel(rawVal: 0).raw
-//            pixels[x+y*width] = p
-//        }
-//        else {
-//            p = RGBAPixel(rawVal: 0xFFFFFFFF).raw
-//            pixels[x+y*width] = p
-//        }
-//        
-//        var p = pixels[x+y*width]
-//        var tmp =  RGBAPixel(rawVal: p)
-//        var total = (tmp.blue + tmp.green + tmp.red)/3
-//        tmp.blue = total
-//        tmp.red = total + 40
-//        tmp.green = total + 20
-//        if (tmp.red > 255){
-//            tmp.red  = 255
-//        }
-//        if (tmp.green > 255){
-//            tmp.green = 255
-//        }
-//        p = RGBAPixel(rawVal: tmp.raw).raw
-//        pixels[x+y*width] = p
-//    }
-//}
-//let outContext = CGContext(data: pixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent,bytesPerRow: bytesPerRow,space: colorSpace,bitmapInfo: bitmapInfo,releaseCallback: nil,releaseInfo: nil)
-//
-//let outImage = UIImage(cgImage: outContext!.makeImage()!)
-//
-//
-//
+import Foundation
+import UIKit
+import SwiftImage
+
+final class GaussianBlurImage {
+    
+    static func createBlurredImagePhoto(radius: Int, image: UIImage,gottenBeginX: Int, gottenBeginY: Int, gottenX : Int, gottenY : Int) -> Image<RGBA<UInt8>> {
+        let inputImage = Image<RGBA<UInt8>>(uiImage: image)
+        var outputImage = Image<RGBA<UInt8>>(uiImage: image)
+        let positionX : Int = gottenX
+        let positionY : Int = gottenY
+        let sigma = max(Double(radius / 2), 1)
+        
+        
+        let kernelWidth = (2 * radius) + 1
+        
+        
+        var kernel = Array(repeating: Array(repeating: 0.0, count: kernelWidth), count: kernelWidth)
+        var sum = 0.0
+        
+        
+        for x in -radius...radius {
+            for y in -radius...radius {
+                let exponentNumerator = Double(-(x * x + y * y))
+                let exponentDenominator = (2 * sigma * sigma)
+                
+                let eExpression = pow(M_E, exponentNumerator / exponentDenominator)
+                let kernelValue = (eExpression / (2 * Double.pi * sigma * sigma))
+                
+                
+                kernel[x + radius][y + radius] = kernelValue
+                sum += kernelValue
+            }
+        }
+        
+        
+        for x in 0..<kernelWidth {
+            for y in 0..<kernelWidth {
+                kernel[x][y] /= sum
+            }
+        }
+        
+        let radiusBeginX: Int = gottenBeginX
+        
+        let radiusBeginY: Int = gottenBeginY
+        
+        for x in radiusBeginX..<(positionX - radiusBeginX)/2 { // inputImage.width
+            for y in radiusBeginY..<(positionY - radiusBeginY)/2 { //inputImage.height
+                
+                var redValue = 0.0
+                var greenValue = 0.0
+                var blueValue = 0.0
+                
+                
+                for kernelX in -radius...radius {
+                    for kernelY in -radius...radius {
+                        
+                        
+                        let kernelValue = kernel[kernelX + radius][kernelY + radius]
+                        
+                        
+                        redValue += Double(inputImage[x - kernelX, y - kernelY].red) * kernelValue
+                        greenValue += Double(inputImage[x - kernelX, y - kernelY].green) * kernelValue
+                        blueValue += Double(inputImage[x - kernelX, y - kernelY].blue) * kernelValue
+                    }
+                }
+                
+                
+                outputImage[x,y].red = UInt8(redValue)
+                outputImage[x,y].green = UInt8((greenValue))
+                outputImage[x,y].blue = UInt8(blueValue)
+            }
+        }
+        DispatchQueue.global(qos: .default).async{
+            for x in (positionX - radiusBeginX)/2..<(positionX - radiusBeginX) { // inputImage.width
+                for y in (positionY - radiusBeginY)/2..<(positionY - radiusBeginY) { //inputImage.height
+                    
+                    var redValue = 0.0
+                    var greenValue = 0.0
+                    var blueValue = 0.0
+                    
+                    
+                    for kernelX in -radius...radius {
+                        for kernelY in -radius...radius {
+                            
+                            
+                            let kernelValue = kernel[kernelX + radius][kernelY + radius]
+                            
+                            
+                            redValue += Double(inputImage[x - kernelX, y - kernelY].red) * kernelValue
+                            greenValue += Double(inputImage[x - kernelX, y - kernelY].green) * kernelValue
+                            blueValue += Double(inputImage[x - kernelX, y - kernelY].blue) * kernelValue
+                        }
+                    }
+                    
+                    
+                    outputImage[x,y].red = UInt8(redValue)
+                    outputImage[x,y].green = UInt8((greenValue))
+                    outputImage[x,y].blue = UInt8(blueValue)
+                }
+            }
+        }
+        return outputImage
+    }
+}

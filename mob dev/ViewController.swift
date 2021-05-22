@@ -43,14 +43,17 @@ class ViewController: UIViewController {
 
     @objc func load(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: "Image", message: nil, preferredStyle: .actionSheet)
+        
         let actionPhoto = UIAlertAction(title: "Photo library", style: .default) { (alert) in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+        
         let actionCamera = UIAlertAction(title: "Camera", style: .default) { (alert) in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+        
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(actionPhoto)
