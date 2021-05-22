@@ -20,6 +20,7 @@
 		3C6134A9265787DE00419971 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6134A8265787DE00419971 /* logo.png */; };
 		3C6134AB2657888F00419971 /* globalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134AA2657888F00419971 /* globalVars.swift */; };
 		3C6134C52657E56200419971 /* saverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6134C42657E56200419971 /* saverViewController.swift */; };
+		3CF52BD72658ACCE00B7684E /* forFaceRecognized.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CF52BD62658ACCE00B7684E /* forFaceRecognized.mm */; };
 		3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3A264EAFE800E97504 /* testViewController.swift */; };
 		3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */; };
 		5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5939EBEF263BD67500802BE3 /* AppDelegate.swift */; };
@@ -28,7 +29,6 @@
 		5939EBF7263BD67800802BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF6263BD67800802BE3 /* Assets.xcassets */; };
 		5939EBFA263BD67800802BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5939EBF8263BD67800802BE3 /* LaunchScreen.storyboard */; };
 		A17BE3B2265798DA00EBEB3B /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */; };
-		A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */; };
 		A17BE3BD2657A21E00EBEB3B /* tabView6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */; };
 		A1ABFF802658505F00E0C2B3 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17BE3B826579A3600EBEB3B /* opencv2.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,8 @@
 		3C6134A8265787DE00419971 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3C6134AA2657888F00419971 /* globalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVars.swift; sourceTree = "<group>"; };
 		3C6134C42657E56200419971 /* saverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saverViewController.swift; sourceTree = "<group>"; };
+		3CF52BD52658ACA900B7684E /* forFaceRecognized.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = forFaceRecognized.h; sourceTree = "<group>"; };
+		3CF52BD62658ACCE00B7684E /* forFaceRecognized.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = forFaceRecognized.mm; sourceTree = "<group>"; };
 		3CF61E3A264EAFE800E97504 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		3CF61E3C264EB7BD00E97504 /* tabView1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView1ViewController.swift; sourceTree = "<group>"; };
 		5939EBEC263BD67500802BE3 /* mob dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +60,6 @@
 		5939EBFB263BD67800802BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A17BE3B1265798DA00EBEB3B /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
 		A17BE3B3265798F000EBEB3B /* mob dev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mob dev-Bridging-Header.h"; sourceTree = "<group>"; };
-		A17BE3B4265798F000EBEB3B /* OCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCVWrapper.h; sourceTree = "<group>"; };
-		A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OCVWrapper.mm; sourceTree = "<group>"; };
 		A17BE3B826579A3600EBEB3B /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "mob dev/Frameworks/opencv2.framework"; sourceTree = "<group>"; };
 		A17BE3BC2657A21E00EBEB3B /* tabView6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView6ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,8 +120,8 @@
 				5939EBFB263BD67800802BE3 /* Info.plist */,
 				3C2557B12650F737005DC919 /* blur.swift */,
 				3C255794264EF619005DC919 /* MyPlayground.playground */,
-				A17BE3B4265798F000EBEB3B /* OCVWrapper.h */,
-				A17BE3B5265798F000EBEB3B /* OCVWrapper.mm */,
+				3CF52BD52658ACA900B7684E /* forFaceRecognized.h */,
+				3CF52BD62658ACCE00B7684E /* forFaceRecognized.mm */,
 				A17BE3B3265798F000EBEB3B /* mob dev-Bridging-Header.h */,
 			);
 			path = "mob dev";
@@ -218,7 +218,6 @@
 			files = (
 				5939EBF2263BD67500802BE3 /* ViewController.swift in Sources */,
 				3C25579C2650D41A005DC919 /* tabView5ViewController.swift in Sources */,
-				A17BE3B6265798F000EBEB3B /* OCVWrapper.mm in Sources */,
 				3CF61E3D264EB7BD00E97504 /* tabView1ViewController.swift in Sources */,
 				3C6134C52657E56200419971 /* saverViewController.swift in Sources */,
 				3C2557962650D3A2005DC919 /* tabView2ViewController.swift in Sources */,
@@ -229,6 +228,7 @@
 				3CF61E3B264EAFE800E97504 /* testViewController.swift in Sources */,
 				3C2557A02650EF7C005DC919 /* tabView3ViewCOntroller.swift in Sources */,
 				3C2557B22650F737005DC919 /* blur.swift in Sources */,
+				3CF52BD72658ACCE00B7684E /* forFaceRecognized.mm in Sources */,
 				5939EBF0263BD67500802BE3 /* AppDelegate.swift in Sources */,
 				A17BE3BD2657A21E00EBEB3B /* tabView6ViewController.swift in Sources */,
 				3C32569E2654FE9400611852 /* functions.swift in Sources */,
